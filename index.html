@@ -1,0 +1,128 @@
+<!-- ...existing code... -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Malela</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">.Malela</div>
+    <nav class="nav">
+      <button class="nav-btn" data-target="about">About</button>
+      <button class="nav-btn" data-target="projects">Projects</button>
+      <button class="nav-btn" data-target="contact">Contact</button>
+    </nav>
+    <button id="theme-toggle" class="theme-toggle" title="Toggle theme">🌙</button>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-inner">
+        <h1 class="hero-title">Hi, I'm Malela</h1>
+        <p class="hero-sub">I build beautiful, modern web experiences — frontend + JS.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#projects">View Work</a>
+          <button class="btn ghost" id="scroll-contact">Contact Me</button>
+        </div>
+      </div>
+      <div class="hero-image" aria-hidden="true"></div>
+    </section>
+
+    <section id="about" class="section about">
+      <div class="container">
+        <h2>About</h2>
+        <p>I’m a web developer focused on clean frontend, animations and performant JavaScript. I  am 10 year old .This is my interactive portfolio  — responsive, themeable, and easy to extend.</p>
+      </div>
+    </section>
+
+    <section id="projects" class="section projects">
+      <div class="container">
+        <h2>Projects</h2>
+        <div class="filters">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="web">Web</button>
+          <button class="filter-btn" data-filter="shop">Shop</button>
+          <button class="filter-btn" data-filter="chat">Chat</button>
+        </div>
+
+        <div class="grid" id="projects-grid">
+          <!-- project cards -->
+          <article class="card" data-type="web">
+            <img class="project-photo" src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&s=1c10f12b0a6b2b5a7c9a1a0c9b2f9a8b" alt="Portfolio screenshot">
+            <h3 class="card-title">Portfolio Site</h3>
+            <p class="muted">Personal portfolio — animations, responsive layout.</p>
+            <div class="card-actions">
+              <button class="btn view-btn" data-title="Portfolio Site" data-desc="A responsive portfolio with animated sections.">View</button>
+              <button class="btn ghost demo-btn">Demo</button>
+            </div>
+          </article>
+
+          <article class="card" data-type="shop">
+            <img class="product-photo" src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&s=1d2f3ff7c4a7ef2f6f39f0b2e6a6b8e2" alt="Shop screenshot">
+            <h3 class="card-title">Shop UI</h3>
+            <p class="muted">Modern e‑commerce UI with product cards.</p>
+            <div class="card-actions">
+              <button class="btn view-btn" data-title="Shop UI" data-desc="Interactive shop UI with cart and filters.">View</button>
+              <button class="btn ghost demo-btn">Demo</button>
+            </div>
+          </article>
+
+          <article class="card" data-type="chat">
+            <img class="project-photo" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&s=7a5b7a7a6c7f7b7d5e3a1f2c0a8d6e7a" alt="Chat screenshot">
+            <h3 class="card-title">Realtime Chat</h3>
+            <p class="muted">Socket / Firebase powered real-time chat demo.</p>
+            <div class="card-actions">
+              <button class="btn view-btn" data-title="Realtime Chat" data-desc="Realtime messaging with presence and simple UI.">View</button>
+              <button class="btn ghost demo-btn">Demo</button>
+            </div>
+          </article>
+
+          <article class="card" data-type="web">
+            <img class="project-photo" src="https://images.unsplash.com/photo-1547658719-da2b51169166?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&s=3e4a7d5a8a9b8c7d6e5f4c3b2a1d0e9f" alt="Dashboard screenshot">
+            <h3 class="card-title">Admin Dashboard</h3>
+            <p class="muted">Data visualization and UI components.</p>
+            <div class="card-actions">
+              <button class="btn view-btn" data-title="Admin Dashboard" data-desc="Dashboard with charts and filters.">View</button>
+              <button class="btn ghost demo-btn">Demo</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact">
+      <div class="container">
+        <h2>Contact</h2>
+        <form id="contact-form" class="contact-form" novalidate>
+          <input type="text" id="name" placeholder="Your name" required />
+          <input type="email" id="email" placeholder="Email" required />
+          <textarea id="message" rows="5" placeholder="Message" required></textarea>
+          <div class="form-actions">
+            <button class="btn primary" type="submit">Send</button>
+            <button class="btn ghost" type="button" id="clear-form">Clear</button>
+          </div>
+          <p id="form-msg" class="muted" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- modal -->
+  <div id="project-modal" class="modal" aria-hidden="true">
+    <div class="modal-panel">
+      <button class="modal-close" id="modal-close">✕</button>
+      <h3 id="modal-title"></h3>
+      <p id="modal-desc"></p>
+    </div>
+  </div>
+
+
+
+  <script src="chat.js"></script>
+  <script src="portfolio.js"></script>
+</body>
+</html>
+<!-- ...existing code... -->
